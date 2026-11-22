@@ -1,6 +1,6 @@
 # JODU 5174x - WebUI Root Command Injection
 
-Independent security research by [@jxyass11](https://github.com/jxyass11).
+Independent security research by [@joyas11](https://github.com/joyas11).
 
 One vulnerability in the Jio ODU WebUI, reachable from the local network:
 
@@ -140,7 +140,7 @@ security research, not affiliated with or endorsed by the vendor.
 
 ## Credit
 
-Research, analysis and PoC by [@jxyass11](https://github.com/jxyass11).
+Research, analysis and PoC by [@joyas11](https://github.com/joyas11).
 Static ARM/Thumb ELF analysis of the decrypted `rootfs`/`usrfs` volumes, with
 live validation on owned hardware.
 
