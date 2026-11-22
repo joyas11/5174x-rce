@@ -122,22 +122,6 @@ Password order: supplied, then factory default, then the hard-coded credential.
 - Do not send a literal `"` in the payload - it breaks out of the intended
   field. Use `$(...)`, backticks and `${IFS}` for spaces.
 
-## Remediation
-
-1. Do not pass request data to `popen`/`system`. Run the PIN operation through
-   `execve` with an argv array.
-2. If a shell is unavoidable, pass values as argv, never via `sprintf`.
-3. Validate `pin_setting` against an allow-list of documented values
-   (e.g. `^[a-z_]{1,16}$`).
-4. Remove the hard-coded `Admin` / `Jiocentrum` acceptance from
-   `app/account/auth`.
-5. Drop privileges: run `FXcgiMain` as an unprivileged user.
-
-## Disclosure
-
-Published: 2026-11-22. No CVE assigned, no vendor advisory known. Independent
-security research, not affiliated with or endorsed by the vendor.
-
 ## Credit
 
 Research, analysis and PoC by [@joyas11](https://github.com/joyas11).
