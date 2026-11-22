@@ -134,6 +134,5 @@ MIT. See `LICENSE`.
 
 ## Responsible use
 
-Provided for defensive research and coordinated disclosure. Test only against
-hardware you own or are explicitly authorised to assess. The payload runs as
+Test only against hardware you own or are explicitly authorised to assess. The payload runs as
 root; you are responsible for any effect on the device, the SIM and the network.
